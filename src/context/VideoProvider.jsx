@@ -22,8 +22,9 @@ const VideoProvider = ({ children }) => {
     if (preguntaActual < Object.keys(preguntas).length - 1) {
       setPreguntaActual(preguntaActual + 1);
       setFinalizado(false);
-    }else {
+    }else { 
       setFinalizado(true);
+      setPreguntaActual(0);
     }
     const respuestaCorrecta = respuestasCorrecta[preguntaActual].correct_answer;
    if(respuestaCorrecta === e.target.value){
@@ -33,6 +34,7 @@ const VideoProvider = ({ children }) => {
   }
   useEffect(() => {
     const obtenerPreguntas = async () => {
+      
       try {
         const url =
           "https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple";
@@ -71,7 +73,10 @@ const VideoProvider = ({ children }) => {
         preguntaActual,
         siguientePregunta,
         puntos,
-        finalizado
+        finalizado,
+        setPuntos,
+        setFinalizado,
+        setPreguntaActual
       }}
     >
       {children}

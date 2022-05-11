@@ -1,0 +1,21 @@
+.modal {
+    text-align: center;
+    margin-top: 100px;
+    background-color: rgb(251, 245, 237);
+    padding: 30px;
+}
+.modal h1 {
+     color: #FFE59D;
+     font-size: 3rem;
+}
+.modal h3 {
+    color: gray
+}
+.modal h5 {
+    color: #FFE59D;
+    font-size: 4rem;
+}
+.modal p {
+    color: rgb(11, 114, 193);
+    cursor: pointer;
+}

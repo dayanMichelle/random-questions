@@ -1,11 +1,19 @@
-import React from 'react'
+
 import useVideo from '../hooks/useVideo'
+import styles from '../styles/Modal.module.css'
 
 const Modal = () => {
-    const { puntos } = useVideo()
+    const { puntos, setPuntos,setFinalizado,setPreguntaActual } = useVideo()
+    console.log(setPuntos)
   return (
-    <div>
-        <h1>{puntos}</h1>
+    <div className={styles.modal}>
+        <h1>¡Felicidades!</h1>
+        <h3>Has finalizado con:</h3>
+        <h5>{puntos}</h5>
+        <p onClick={() =>{ 
+            setPuntos(0)
+            setFinalizado(false)
+            }}>Volver al test</p>
     </div>
   )
 }
