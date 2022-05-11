@@ -11,6 +11,14 @@ const VideoProvider = ({ children }) => {
     inputArray.sort(() => Math.random() - 0.5);
   }
 
+  const siguientePregunta = (e) => {
+    console.log("click");
+    e.preventDefault();
+    if (preguntaActual < Object.keys(preguntas).length - 1) {
+      setPreguntaActual(preguntaActual + 1);
+    }
+    console.log(e)
+  }
   useEffect(() => {
     const obtenerPreguntas = async () => {
       try {
@@ -48,6 +56,7 @@ const VideoProvider = ({ children }) => {
       value={{
         preguntas,
         preguntaActual,
+        siguientePregunta
       }}
     >
       {children}
