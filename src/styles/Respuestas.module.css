@@ -1,0 +1,26 @@
+.radio {
+    background-color: rgb(243, 243, 243);
+    margin: 30px auto;
+    border-radius: 50px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    transition: 0.4s all ease;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 30px;
+}
+.radio > input {
+    cursor: pointer;
+}
+.radio > label {
+    font-size: 1rem;
+    font-weight: 100;
+    padding-left: 30px;
+    cursor: pointer;
+}
+.radio:hover
+{
+    background-color: rgb(189, 189, 189);
+}

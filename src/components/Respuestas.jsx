@@ -1,4 +1,4 @@
-import styles from "../styles/Preguntas.module.css";
+import styles from "../styles/Respuestas.module.css";
 const Respuestas = ({ preguntas, preguntaActual }) => {
   return (
     <main>
