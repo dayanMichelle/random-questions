@@ -1,11 +1,17 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import Modal from "../components/Modal";
 
 const VideoContext = createContext();
 
 const VideoProvider = ({ children }) => {
   const [preguntas, setPreguntas] = useState([]);
   const [preguntaActual, setPreguntaActual] = useState(0);
+  const [ puntos, setPuntos ] = useState(0);
+  const [respuestasCorrecta, setRespuestasCorrecta] = useState([]);
+  const [finalizado, setFinalizado] = useState(false);
+
+
 
   function shuffleArray(inputArray) {
     inputArray.sort(() => Math.random() - 0.5);
@@ -15,7 +21,15 @@ const VideoProvider = ({ children }) => {
     e.preventDefault();
     if (preguntaActual < Object.keys(preguntas).length - 1) {
       setPreguntaActual(preguntaActual + 1);
+      setFinalizado(false);
+    }else {
+      setFinalizado(true);
     }
+    const respuestaCorrecta = respuestasCorrecta[preguntaActual].correct_answer;
+   if(respuestaCorrecta === e.target.value){
+      setPuntos(puntos + 1);
+   }
+   console.log(puntos);
   }
   useEffect(() => {
     const obtenerPreguntas = async () => {
@@ -24,6 +38,7 @@ const VideoProvider = ({ children }) => {
           "https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple";
         const { data } = await axios.get(url);
         const { results } = await data;
+        setRespuestasCorrecta(results);
         const objetoPregunta = results.map((pregunta) => {
           const respuest = {
             question: pregunta.question,
@@ -54,7 +69,9 @@ const VideoProvider = ({ children }) => {
       value={{
         preguntas,
         preguntaActual,
-        siguientePregunta
+        siguientePregunta,
+        puntos,
+        finalizado
       }}
     >
       {children}

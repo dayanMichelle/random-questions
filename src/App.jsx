@@ -1,16 +1,23 @@
 import { Fragment } from "react";
 import BarraPreguntas from "./components/BarraPreguntas";
+import Modal from "./components/Modal";
 import Pregunta from "./components/Pregunta";
-import VideoProvider from "./context/VideoProvider";
+import useVideo from "./hooks/useVideo";
 import "./index.css";
 
 function App() {
+  const { finalizado } = useVideo();
   return (
     <div className="contenedor">
-      <VideoProvider>
-        <BarraPreguntas />
-        <Pregunta />
-      </VideoProvider>
+    
+        {!finalizado ? (
+          <>
+            <BarraPreguntas />
+            <Pregunta />
+          </>
+        ) : (
+          <Modal />
+        )}
     </div>
   );
 }
