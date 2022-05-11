@@ -12,12 +12,10 @@ const VideoProvider = ({ children }) => {
   }
 
   const siguientePregunta = (e) => {
-    console.log("click");
     e.preventDefault();
     if (preguntaActual < Object.keys(preguntas).length - 1) {
       setPreguntaActual(preguntaActual + 1);
     }
-    console.log(e)
   }
   useEffect(() => {
     const obtenerPreguntas = async () => {

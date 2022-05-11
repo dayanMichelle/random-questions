@@ -1,0 +1,11 @@
+.contenedorBarra {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.barra {
+  width: 8%;
+  border-radius: 5px;
+  height: 10px;
+ background-color: #FFE59D;
+}
