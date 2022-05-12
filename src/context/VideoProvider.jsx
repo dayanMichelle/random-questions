@@ -10,7 +10,7 @@ const VideoProvider = ({ children }) => {
   const [ puntos, setPuntos ] = useState(0);
   const [respuestasCorrecta, setRespuestasCorrecta] = useState([]);
   const [finalizado, setFinalizado] = useState(false);
-  const [ modal, setModal ] = useState(false)
+  const [ modal, setModal ] = useState(true)
 
 
 

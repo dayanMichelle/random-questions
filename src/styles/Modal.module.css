@@ -7,6 +7,7 @@
   width: 400px;
   margin-top: 50px;
  border-radius: 10px;
+ padding-top: 50px;
 }
 .cerrar {
    font-size: 2rem;
@@ -15,6 +16,7 @@
     position: absolute;
     top: -20px;
     right: 0;
+    padding-right: 30px;
 }
 .modal h1,h3 {
   font-size: 2rem;
@@ -23,15 +25,16 @@
   line-height: 2;
   letter-spacing: 2px;
   color: #FFE59D;
+  font-weight: bold;
 }
 .modal h3 {
   font-size: 1.5rem;
   color: white;
+  font-weight: 100;
 }
 .modal h5 {
    color: #FFE59D;
    font-size: 5rem;
-   margin-top: -20px;
 }
 
 .volver {
