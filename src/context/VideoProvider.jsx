@@ -10,6 +10,8 @@ const VideoProvider = ({ children }) => {
   const [ puntos, setPuntos ] = useState(0);
   const [respuestasCorrecta, setRespuestasCorrecta] = useState([]);
   const [finalizado, setFinalizado] = useState(false);
+  const [ modal, setModal ] = useState(false)
+
 
 
 
@@ -22,9 +24,11 @@ const VideoProvider = ({ children }) => {
     if (preguntaActual < Object.keys(preguntas).length - 1) {
       setPreguntaActual(preguntaActual + 1);
       setFinalizado(false);
+      setModal(false);
     }else { 
       setFinalizado(true);
       setPreguntaActual(0);
+      setModal(true)
     }
     const respuestaCorrecta = respuestasCorrecta[preguntaActual].correct_answer;
    if(respuestaCorrecta === e.target.value){
@@ -76,7 +80,9 @@ const VideoProvider = ({ children }) => {
         finalizado,
         setPuntos,
         setFinalizado,
-        setPreguntaActual
+        setPreguntaActual,
+        modal,
+        setModal
       }}
     >
       {children}
