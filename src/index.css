@@ -6,4 +6,6 @@ body {
   width: 90%;
   margin: 0 auto;
   position: absolute;
+  left: 0;
+  right: 0;
 }
